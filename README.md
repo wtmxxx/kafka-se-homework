@@ -1,3 +1,5 @@
+软件工程 Git代码管理工具作业
+
 <p align="center">
 <picture>
   <source media="(prefers-color-scheme: light)" srcset="docs/images/kafka-logo-readme-light.svg">
@@ -44,7 +46,8 @@ Follow instructions in https://kafka.apache.org/quickstart
     ./gradlew integrationTest
     ./gradlew test -Pkafka.test.run.flaky=true  # runs tests that are marked as flaky
 
-    
+
+​    
 ### Force re-running tests without code change ###
     ./gradlew test --rerun-tasks
     ./gradlew unitTest --rerun-tasks
@@ -89,7 +92,7 @@ Generate coverage reports for the whole project:
 Generate coverage for a single module, i.e.: 
 
     ./gradlew clients:reportCoverage -PenableTestCoverage=true -Dorg.gradle.parallel=false
-    
+
 ### Building a binary release gzipped tar ball ###
     ./gradlew clean releaseTarGz
 
@@ -98,7 +101,7 @@ The release file can be found inside `./core/build/distributions/`.
 ### Building auto generated messages ###
 Sometimes it is only necessary to rebuild the RPC auto-generated message data when switching between branches, as they could
 fail due to code changes. You can just run:
- 
+
     ./gradlew processMessages processTestMessages
 
 See [Apache Kafka Message Definitions](clients/src/main/resources/common/message/README.md) for details on Apache Kafka message protocol.
@@ -183,7 +186,7 @@ Please note for this to work you should create/update user maven settings (typic
 ### Installing specific projects to the local Maven repository ###
 
     ./gradlew -PskipSigning=true :streams:publishToMavenLocal
-    
+
 ### Building the test jar ###
     ./gradlew testJar
 
@@ -226,7 +229,7 @@ The gradle [dependency debugging documentation](https://docs.gradle.org/current/
 Alternatively, use the `allDeps` or `allDepInsight` tasks for recursively iterating through all subprojects:
 
     ./gradlew allDeps
-
+    
     ./gradlew allDepInsight --configuration runtimeClasspath --dependency com.fasterxml.jackson.core:jackson-databind
 
 These take the same arguments as the builtin variants.
